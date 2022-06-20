@@ -1,9 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-3">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center">
-        <img alt="logo" src="../assets/img/cw-logo.png" height="45" />
-      </div>
+     <img class="img" src="https://static.wixstatic.com/media/161a5a_123241ed2e3f4451a3153fe02bbef524~mv2.png/v1/fill/w_520,h_464,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/N-icon.png" alt=""><p>etwork</p>
     </router-link>
     <button
       class="navbar-toggler"
@@ -19,12 +17,9 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
         <li>
-          <router-link
-            :to="{ name: 'About' }"
-            class="btn text-success lighten-30 selectable text-uppercase"
-          >
-            About
-          </router-link>
+          
+          <Search />
+         
         </li>
       </ul>
       <!-- LOGIN COMPONENT HERE -->
@@ -34,9 +29,14 @@
 </template>
 
 <script>
+import { computed } from 'vue';
+import { AppState } from '../AppState';
+
 export default {
   setup() {
-    return {};
+    return {
+      post: computed(()=> AppState.posts)
+    };
   },
 };
 </script>
@@ -52,5 +52,9 @@ a:hover {
   border-bottom: 2px solid var(--bs-success);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+.img{
+  height: 5em;
+  
 }
 </style>
