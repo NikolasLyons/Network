@@ -64,7 +64,8 @@ export default {
       },
       async addLike(){
         try {
-          await postsService.addLike()
+          await postsService.addLike(props.post.id)
+          
         } catch (error) {
           logger.error(error)
           Pop.toast(error.message, 'error')
