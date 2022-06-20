@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
-       <Banner v-for="b in banners" :key="b.title" :banner="b"/>
+       <Banner size="square"/>
       </div>
     </div>
     <div class="row">
@@ -15,6 +15,7 @@
             <img class="profile-img" :src="profile.picture" alt="">
             <h3>{{profile.class}}</h3>
             <h2>{{profile.name}}</h2>
+            <i v-if="profile.graduated">🎓</i>
           </div>
           <div class="col-md-6 text-end p-2">
            <i class="mdi mdi-github social-media"></i><p>{{profile.github}}</p>
@@ -23,7 +24,7 @@
           </div>
           <div class="col-12">
             <p><em>{{profile.bio}}</em></p>
-            <p>{{profile.github}}</p>
+          
           </div>
           <div class="col-12 text-end">
             <Modal />

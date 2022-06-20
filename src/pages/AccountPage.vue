@@ -13,6 +13,14 @@
             <input type="text" v-model="editAccount.picture">
             <label for="">Cover Image</label>
             <input type="text" v-model="editAccount.coverImg">
+            <label for="">github</label>
+            <input type="text" v-model="editAccount.github">
+            <label for="">linkedin</label>
+            <input type="text" v-model="editAccount.linkedin">
+            <label for="">bio</label>
+            <input type="text" v-model="editAccount.bio">
+            <label for="">graduated</label>
+            <input type="checkbox" v-model="editAccount.graduated">
             <button class="btn btn-outline-primary">Save</button>
           </form>
         </div>

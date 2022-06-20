@@ -1,13 +1,13 @@
 <template>
    <div class="col-12 p-2">
-          <img class="img-fluid" :src="banners[0].tall" alt="">
-          <img class="img-fluid" :src="banners[1].square" alt="">
+          <img v-for="b in banners" :key="b.id" class="img-fluid" :src="b[size]" alt="">
         </div>
 </template>
 
 
 <script>
 
+import { stringify } from 'json5'
 import { computed, onMounted } from 'vue'
 import { AppState } from '../AppState'
 import { bannersService } from '../services/BannersService'
@@ -15,7 +15,12 @@ import { logger } from '../utils/Logger'
 import Pop from '../utils/Pop'
 
 export default {
-  props: {banner: {type: Object, required: true}},
+  props: {
+    size: {
+      type: String,
+      default: 'square'
+    }
+  },
   setup(){
     onMounted( async()=>{
       try {

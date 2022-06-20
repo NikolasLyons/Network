@@ -12,9 +12,9 @@ class ProfileService{
   }
   async saveProfile(id, profileData){
     logger.log(id, profileData)
-    // const res = await api.put('api/profiles/'+ id)
-    // logger.log('profile has been saved',res.data)
-    // AppState.profile = res.data
+    const res = await api.put('api/profiles/'+ id, profileData)
+     logger.log('profile has been saved',res.data)
+    AppState.profile = res.data
 
   }
   

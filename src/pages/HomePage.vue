@@ -6,6 +6,8 @@
         <div class="col-md-12 p-5">
           <img class="img-fluid side-bar-img" :src="account.picture" alt="">
           <h1 class="text-center">{{account.name}}</h1>
+          <p>{{account.github}}</p>
+          <p>{{account.biop}}</p>
         </div>
         <div class="col-md-12 p-5">
           <p></p>
@@ -46,7 +48,7 @@
     </div>
     <div class="col-md-3">
       <div class="row p-2">
-       <Banner v-for="b in banners" :key="b.title" :banner="b"/>
+       <Banner  size="tall"/>
       </div>
     </div>
   </div>
